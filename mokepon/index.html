@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>MOKEPON 🔥💧🌼</h1>
+
+    <section id="seleccionar-mascota">
+
+        <h2>Elige a tu mascota</h2>
+
+        <!-- for para vincular label con id de la mascota y no solo en el radio de seleccion -->
+        <input type="radio" id="buckbeack" name="mascota"> 
+            <label for="buckbeack" id="buckbeack">Buckbeack -> Agua</label><br>
+
+        <input type="radio" id="ptolomeo" name="mascota"> 
+            <label for="ptolomeo">Ptolomeo -> Fuego</label><br>
+
+        <input type="radio" id="redmington" name="mascota"> 
+            <label for="redmington">Redmington -> Tierra</label><br>
+        <!-- <input type="radio" id="seevitar" name="mascota"> <label for="">Seevitar -> Fuego y Tierra</label><br>
+        <input type="radio" id="raaymond" name="mascota"> <label for="">Raaymond -> Agua y Fuego</label><br>
+        <input type="radio" id="tyronee" name="mascota"> <label for="">Tyronee -> Tierra y Agua</label><br> -->
+
+        <button id="boton-mascota">Seleccionar</button>
+
+    </section>
+
+    <section id="seleccionar-ataque">
+
+        <h2>Elige tu ataque</h2>
+
+        <p>Tu mascota <span id="mascota-jugador"></span> tiene<span id=""> 3 </span>vidas</p>
+        <p>La mascota <span id="mascota-enemigo"></span> enemigo tiene</span id=""> 3 </span>vidas</p>
+
+        <p>
+            <button id="boton-fuego">Fuego 🔥</button>
+            <button id="boton-agua">Agua 💧</button>
+            <button id="boton-tierra">Tierra 🌼</button>
+
+        </p>
+    </section>
+
+    <section id="mensajes">
+        <p>Tu mascota atacó con FUEGO, las mascota del enemigo atacó con AGUA - EMPATE 🍪</p>
+    </section>
+
+    <section id="reiniciar">
+        <button id="boton-reiniciar">REINICIAR</button>
+    </section>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
