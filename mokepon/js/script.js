@@ -3,20 +3,22 @@ let ataqueJugador
 let ataquePC
 
 function iniciarJuego(){
+
     const botonMascotaJugador = document.getElementById("boton-mascota");
     botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador);
 
     let botonFuego = document.getElementById("boton-fuego"); 
     botonFuego.addEventListener("click", ataqueFuego);
     botonFuego.addEventListener("click", ataqueEnemigo);
+
     let botonAgua = document.getElementById("boton-agua");
     botonAgua.addEventListener("click", ataqueAgua);
     botonAgua.addEventListener("click", ataqueEnemigo);
+
     let botonTierra = document.getElementById("boton-tierra");
     botonTierra.addEventListener("click", ataqueTierra);
     botonTierra.addEventListener("click", ataqueEnemigo);
 
-    
 }
 
 function seleccionarMascotaJugador(){
@@ -55,33 +57,54 @@ function seleccionarMascotaEnemigo(){
 
 function ataqueFuego() {
     ataqueJugador = 'FUEGO';
-    alert(ataqueJugador)
 }
 
 function ataqueAgua() {
     ataqueJugador = 'AGUA';
-    alert(ataqueJugador)
 }
 
 function ataqueTierra() {
     ataqueJugador = 'TIERRA';
-    alert(ataqueJugador)
 }
 
 function ataqueEnemigo(){
     const especialEnemigo = aleatorio(1, 3)
 
     if (especialEnemigo == 1){
-        especialEnemigo = 'FUEGO'
+        ataqueEnemigo = 'FUEGO';
     }else if(especialEnemigo == 2){
-        especialEnemigo = 'AGUA'
+        ataqueEnemigo = 'AGUA';
     }else{
-        especialEnemigo = 'TIERRA'
+        ataqueEnemigo = 'TIERRA';
     }
+
+    crearMnsj();
 } 
 
 function aleatorio(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function crearMnsj() {
+
+    let parrafo = document.createElement('p');
+    mensajes.appendChild(parrafo);
+    parrafo.innerHTML = '---- Atacaste con "' + ataqueJugador + '" ----<br>' + '---- Enemigo ataca con "' + ataqueEnemigo + '" ----<br>';
+    combate();
+}
+
+function combate(){
+
+    let mensajeCombate = document.createElement('p');
+    mensajes.appendChild(mensajeCombate);
+
+    if(ataqueJugador == ataqueEnemigo){
+        mensajeCombate.innerHTML = 'EMPATE 🍪';
+    }else if(ataqueJugador == 'FUEGO' && ataqueEnemigo == 'TIERRA' || ataqueJugador == 'AGUA' && ataqueEnemigo == 'FUEGO' || ataqueJugador == 'TIERRA' && ataqueEnemigo == 'AGUA'){
+        mensajeCombate.innerHTML = 'GANASTE 🍪🍪';
+    }else{
+        mensajeCombate.innerHTML = 'PERDISTE';
+    }
 }
 
 // evento que se inicializa al cargar al 100% la pagina
