@@ -1,8 +1,82 @@
 
 let ataqueJugador
 let ataquePC
+let vidasJugador = 3;
+let vidasEnemigo = 3;
+let vidaCorazonJugador = "♥️ ♥️ ♥️";
+let vidaCorazonEnemigo = "♥️ ♥️ ♥️";
+let pierdeEnemigo = document.getElementById("pierde-enemigo");
+pierdeEnemigo.hidden = true
+let pierdeJugador = document.getElementById("pierde-jugador");
+pierdeJugador.hidden = true
+const mascotaElegidaAleatorio = aleatorio(1, 3);
+const mascotaEnemigo = document.getElementById("mascota-enemigo");    
+let botonReiniciar = document.getElementById("boton-reiniciar");
+    
+
+// tarjeta de Buckbeack
+const buckbeackChecked = document.getElementById("buckbeack-checked");
+const tarjetaMokeponBuckbeack = document.getElementById("tarjetaMokeponBuckbeack");     
+buckbeackChecked.addEventListener("click", (a) => {
+
+    buckbeackChecked.style.color = "green";
+    buckbeackChecked.style.fontWeight = "bolder";
+    tarjetaMokeponBuckbeack.style.backgroundColor = "#111";
+
+    ptolomeoChecked.style.color = "#000";
+    ptolomeoChecked.style.fontWeight = "none";
+    tarjetaMokeponPtolomeo.style.backgroundColor = "#777"
+
+    redmingtonChecked.style.color = "#000";
+    redmingtonChecked.style.fontWeight = "none";
+    tarjetaMokeponRedmington.style.backgroundColor = "#777";
+
+})
+
+// tarjeta de Ptolomeo
+const ptolomeoChecked = document.getElementById("ptolomeo-checked");
+const tarjetaMokeponPtolomeo = document.getElementById("tarjetaMokeponPtolomeo");
+ptolomeoChecked.addEventListener("click", (b) => {
+
+    ptolomeoChecked.style.color = "green";
+    ptolomeoChecked.style.fontWeight = "bolder";
+    tarjetaMokeponPtolomeo.style.backgroundColor = "#111"
+
+    buckbeackChecked.style.color = "#000";
+    buckbeackChecked.style.fontWeight = "none";
+    tarjetaMokeponBuckbeack.style.backgroundColor = "#777"
+
+    redmingtonChecked.style.color = "#000";
+    redmingtonChecked.style.fontWeight = "none";
+    tarjetaMokeponRedmington.style.backgroundColor = "#777"
+    
+})
+
+// tarjeta de Redmington
+const redmingtonChecked = document.getElementById("redmington-checked");
+const tarjetaMokeponRedmington = document.getElementById("tarjetaMokeponRedmington");
+redmingtonChecked.addEventListener("click", (c) => {
+
+    redmingtonChecked.style.color = "green";
+    redmingtonChecked.style.fontWeight = "bolder";
+    tarjetaMokeponRedmington.style.backgroundColor = "#111"
+
+    ptolomeoChecked.style.color = "#000";
+    ptolomeoChecked.style.fontWeight = "none";
+    tarjetaMokeponPtolomeo.style.backgroundColor = "#777"
+
+    buckbeackChecked.style.color = "#000";
+    buckbeackChecked.style.fontWeight = "none";
+    tarjetaMokeponBuckbeack.style.backgroundColor = "#777"
+
+})
+
+
 
 function iniciarJuego(){
+
+    let seleccionarAtaque = document.getElementById("seleccionar-ataque");
+    seleccionarAtaque.style.display = "none"
 
     const botonMascotaJugador = document.getElementById("boton-mascota");
     botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador);
@@ -19,15 +93,28 @@ function iniciarJuego(){
     botonTierra.addEventListener("click", ataqueTierra);
     botonTierra.addEventListener("click", ataqueEnemigo);
 
+    
+    botonReiniciar.addEventListener("click", reiniciarJuego);
+    botonReiniciar.hidden = true;
+
 }
 
 function seleccionarMascotaJugador(){
 
+
+    let seleccionarMascota = document.getElementById("seleccionar-mascota");
+    seleccionarMascota.style.display = "none";
+    let seleccionarAtaque = document.getElementById("seleccionar-ataque");
+    // display block para mostrar resultados de seleccion donde al inicio estaban 'hidden'
+    seleccionarAtaque.style.display = "flex"
     const buckbeack = document.getElementById("buckbeack");
     const ptolomeo = document.getElementById("ptolomeo");
     const redmington = document.getElementById("redmington");
     const mascotaJugador = document.getElementById("mascota-jugador");
-
+    const buckbeackChecked = document.getElementById("buckbeack-checked");
+    const ptolomeoChecked = document.getElementById("ptolomeo-checked");
+    const redmingtonChecked = document.getElementById("redmington-checked");
+    
     if(buckbeack.checked) {
         mascotaJugador.innerHTML = "Buckbeack";
     }else if(ptolomeo.checked) {
@@ -37,15 +124,11 @@ function seleccionarMascotaJugador(){
     }else{
         alert("No seleccionaste nada")
     }
-
+    
     seleccionarMascotaEnemigo()
 }
 
-
 function seleccionarMascotaEnemigo(){
-    const mascotaElegidaAleatorio = aleatorio(1, 3);
-    const mascotaEnemigo = document.getElementById("mascota-enemigo");    
-
     if(mascotaElegidaAleatorio == 1) {
         mascotaEnemigo.innerHTML = "Buckbeack";
     }else if(mascotaElegidaAleatorio == 2) {
@@ -81,30 +164,101 @@ function ataqueEnemigo(){
     crearMnsj();
 } 
 
+function combate(){
+
+    let mensajeCombate = document.createElement('p');
+    mensajeCombate.classList.add("mensaje-ataque");
+    mensajes.appendChild(mensajeCombate);
+
+    const spanVidaJugador = document.getElementById("vidasJugador");
+    const vidas = document.getElementById("vidasEnemigo");
+
+    if(ataqueJugador == ataqueEnemigo){
+        mensajeCombate.innerHTML = 'EMPATE ';
+    }else if(ataqueJugador == 'FUEGO' && ataqueEnemigo == 'TIERRA' ||
+            ataqueJugador == 'AGUA' && ataqueEnemigo == 'FUEGO' || 
+            ataqueJugador == 'TIERRA' && ataqueEnemigo == 'AGUA'){
+        mensajeCombate.innerHTML = 'GANASTE ';
+        vidasEnemigo--
+        // spanVidaEnemigo.innerHTML = vidasEnemigo;
+        vidas.innerHTML = vidasEnemigo
+            if(vidasEnemigo == 2){
+                vidaCorazonEnemigo = "♥️ ♥️";
+                vidas.innerHTML = vidaCorazonEnemigo;
+            }else if(vidasEnemigo == 1){
+                vidaCorazonEnemigo = "♥️";
+                vidas.innerHTML = vidaCorazonEnemigo;
+            }else{
+                let contenedorP2 = document.getElementById("contenedor-player-2");
+                pierdeEnemigo.innerHTML = "El jugador enemigo no tiene mas vidas";
+                pierdeEnemigo.classList.add("pierde-enemigo");
+                pierdeEnemigo.hidden = false;
+                contenedorP2.hidden = true
+                botonReiniciar.hidden = false
+            }
+        revisarVidas()
+    }else{
+        mensajeCombate.innerHTML = 'PERDISTE';
+        vidasJugador--
+        spanVidaJugador.innerHTML = vidasJugador
+        if(vidasJugador == 2){
+            vidaCorazonJugador = "♥️ ♥️";
+            spanVidaJugador.innerHTML = vidaCorazonJugador
+        }else if(vidasJugador == 1){
+            vidaCorazonJugador = "♥️";
+            spanVidaJugador.innerHTML = vidaCorazonJugador
+        }else{
+            let contenedorP1 = document.getElementById("contenedor-player-1");
+            pierdeJugador.innerHTML = "No tenes más vidas perrito. Reinicia el juego ya";
+            pierdeJugador.classList.add("pierde-jugador");
+            pierdeJugador.hidden = false;
+            contenedorP1.hidden = true
+            spanVidaJugador.innerHTML = "El jugador no tiene mas vidas"
+            botonReiniciar.hidden = false
+        }
+        revisarVidas()
+    }
+}
+
+function finAtaques(){
+    let botonFuego = document.getElementById("boton-fuego"); 
+    botonFuego.disabled = true
+    let botonAgua = document.getElementById("boton-agua");
+    botonAgua.disabled = true
+    let botonTierra = document.getElementById("boton-tierra");
+    botonTierra.disabled = true
+}
+
+function revisarVidas(){
+
+    let botonReiniciar = document.getElementById("reiniciar");
+
+    if(vidasEnemigo == 0){
+        // alert("GANASTE PERRI\nGANASTE CON " + vidaCorazonJugador + " vidas")
+        botonReiniciar.hidden = false
+        finAtaques()
+    }else if(vidasJugador == 0){
+        // alert("PERDISTE NABO\nTE GANARON CON "+ vidaCorazonEnemigo + " vidas");
+        botonReiniciar.hidden = false
+        finAtaques()
+    }
+}
+
+function reiniciarJuego(){
+    location.reload();
+}
+
 function aleatorio(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function crearMnsj() {
+function crearMnsj(resultado) {
 
     let parrafo = document.createElement('p');
+    parrafo.classList.add("parrafo-mensaje-ataque");
     mensajes.appendChild(parrafo);
     parrafo.innerHTML = '---- Atacaste con "' + ataqueJugador + '" ----<br>' + '---- Enemigo ataca con "' + ataqueEnemigo + '" ----<br>';
     combate();
-}
-
-function combate(){
-
-    let mensajeCombate = document.createElement('p');
-    mensajes.appendChild(mensajeCombate);
-
-    if(ataqueJugador == ataqueEnemigo){
-        mensajeCombate.innerHTML = 'EMPATE 🍪';
-    }else if(ataqueJugador == 'FUEGO' && ataqueEnemigo == 'TIERRA' || ataqueJugador == 'AGUA' && ataqueEnemigo == 'FUEGO' || ataqueJugador == 'TIERRA' && ataqueEnemigo == 'AGUA'){
-        mensajeCombate.innerHTML = 'GANASTE 🍪🍪';
-    }else{
-        mensajeCombate.innerHTML = 'PERDISTE';
-    }
 }
 
 // evento que se inicializa al cargar al 100% la pagina

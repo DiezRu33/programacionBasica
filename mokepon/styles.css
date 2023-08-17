@@ -1,0 +1,354 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: monospace;
+    background-color: #333;
+}
+
+#tarjetaMokeponBuckbeack {
+    background-color: #666;
+    width: 180px;
+    height: 100px;
+    padding: 20px 70px 10px 5px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    display: flex;
+    transition: .5s all;
+    font-size: 15px;
+    margin: 10px 5px 0 0;
+    font-size: 26px;
+}
+
+#tarjetaMokeponBuckbeack:hover{
+    background-color: #333;
+    color: #fff;
+    font-weight: bolder;
+    transition: 1s all;
+    cursor: pointer;
+}
+
+#tarjetaMokeponPtolomeo {
+    background-color: #666;
+    width: 180px;
+    height: 100px;
+    padding: 20px 70px 10px 5px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    display: flex;
+    transition: .5s all;
+    font-size: 15px;
+    margin: 10px 5px 0 0;
+    font-size: 26px;
+}
+
+#tarjetaMokeponPtolomeo:hover{
+    background-color: #333;
+    color: #fff;
+    font-weight: bolder;
+    transition: 1s all;
+    cursor: pointer;
+}
+
+#tarjetaMokeponRedmington {
+    background-color: #666;
+    width: 180px;
+    height: 100px;
+    padding: 20px 70px 10px 5px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    display: flex;
+    transition: .5s all;
+    font-size: 15px;
+    margin: 10px 5px 0 0;
+    font-size: 26px;
+}
+
+#tarjetaMokeponRedmington:hover{
+    background-color: #333;
+    color: #fff;
+    font-weight: bolder;
+    transition: 1s all;
+    cursor: pointer;
+}
+
+#imgBuckbeack{
+    width: 120px;
+    height: 120px;
+    box-sizing: border-box
+    
+}
+#imgPtolomeo{
+    width: 120px;
+    height: 120px;
+    box-sizing: border-box
+}
+#imgRedmington{
+    width: 120px;
+    height: 120px;
+    box-sizing: border-box
+}
+
+#titulo {
+    color: #fff;
+    font-size: 40px;
+    padding: 15px 0 15px 70px;
+    box-sizing: border-box;
+    background-color: #000;
+    border-radius: 30px;
+    border: 3px solid #fff;
+    height: 100px;
+    width: 500px;
+    margin-top: 100px;
+}
+
+#subtitulo {
+    padding: 200px 0 0 0 ;
+    border: 2px solid #fff;
+    background-color: #000;
+    color: #fff;
+    font-size: 25px;
+    margin: 10px 15px 5px 20px;
+    border-radius: 10px;
+}
+
+#tarjetas {
+
+}
+
+#seleccionar-mascota {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+#buckbeack{
+    width: 100px;
+    height: 100px;
+    background-color: #777;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#ptolomeo {
+    width: 100px;
+    height: 100px;
+    background-color: #777;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+#redmington {
+    width: 100px;
+    height: 100px;
+    background-color: #777;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+input {
+    display: none;
+}
+
+#boton-mascota {
+    width: 150px;
+    height: 450px;
+    margin: 10px 0 0 10px;
+    padding: 3px;
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    transition: .5s all;
+    font-size: 20px;
+}
+#boton-mascota:hover{
+    background-color: #999;
+    color: #000;
+    border: 1px solid #838383;
+    border-radius: 10px;
+    transition: .5s all;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+#seleccionar-ataque{
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenedor-boton{
+    position: sticky;
+    top: 20px;
+}
+
+.boton-de-ataque{
+    background-color: #000;
+    border-radius: 10px;
+    height: 70px;
+    width: 130px;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 25px;
+    transition: 1s all;
+}
+.boton-de-ataque:hover{
+    background-color: #999;
+    border: 1px solid #000;
+    color: #000;
+    cursor: pointer;
+    transition: .5s all;
+}
+
+.subtitulo-ataque{
+    padding: 10px;
+    border: 2px solid #fff;
+    background-color: #000;
+    color: #fff;
+    font-size: 25px;
+    margin: 10px 15px 5px 20px;
+    border-radius: 10px;
+}
+
+.titulo-ataque{
+    display: flex;
+    padding-top: 20px;
+    justify-content: center;
+    box-sizing: border-box;
+    background-color: #000;
+    border-radius: 30px;
+    border: 3px solid #fff;
+    height: 100px;
+    width: 300px;
+    margin-top: 20px;
+    color: #fff;
+    font-weight: bolder;
+    font-size: 45px;
+}
+
+.contenedor-jugadores{
+    display: flex;
+    flex-direction: column;
+}
+
+#contenedor-player-1{
+    box-sizing: border-box;
+    background-color: #999;
+    color: #000;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    transition: .5s all;
+    margin: 20px 0 0 0;
+    font-size: 30px;
+    font-weight: bolder;
+    padding: 10px;
+}
+
+#contenedor-player-2{
+    box-sizing: border-box;
+    background-color: #999;
+    color: #000;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    transition: .5s all;
+    margin: 20px 0px 00px;
+    font-size: 30px;
+    font-weight: bolder;
+    padding: 10px
+}
+
+.pierde-enemigo{
+    box-sizing: border-box;
+    background-color: #999;
+    color: #000;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    transition: .5s all;
+    margin: 20px 0px 00px;
+    font-size: 30px;
+    font-weight: bolder;
+    padding: 10px
+}
+
+.pierde-jugador{
+    box-sizing: border-box;
+    background-color: #999;
+    color: #000;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    transition: .5s all;
+    margin: 20px 0px 00px;
+    font-size: 30px;
+    font-weight: bolder;
+    padding: 10px
+}
+
+.mascota-jugador{
+    color: ;
+}
+
+.mascota-enemigo{
+
+}
+
+#vidasJugador{
+    font-size: 20px;
+    color: #f00;   
+}
+#vidasEnemigo{
+    font-size: 20px;
+    color: #f00;
+}
+
+.contenedor-mensajes-ataque{
+    display: flex;
+}
+
+.parrafo-mensaje-ataque{
+    box-sizing: border-box;
+    background-color: hwb(28 1% 2%);
+    color: hsl(0, 0%, 100%);
+    border: 2px solid #fff;
+    border-radius: 10px;
+    transition: .5s all;
+    margin: 20px 0px 0 0;
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 10px;
+    width: 950px;
+}
+
+.mensaje-ataque{
+    display: flex;
+    box-sizing: border-box;
+    background-color: hsl(0, 0%, 100%);
+    color: #000;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    transition: .5s all;
+    margin: 10px 0px 0px 15px;
+    font-size: 30px;
+    font-weight: bolder;
+    padding: 10px;
+    width: 550px;
+    margin-left: 200px;
+    justify-content: center;
+
+}
+
+#reiniciar{
+    display: flex;
+    margin: 5px;
+    /* border: 2px solid #fff; */
+    background-color: #000;
+    color: #fff;
+    font-weight: bolder;
+    border-radius: 10px;
+}

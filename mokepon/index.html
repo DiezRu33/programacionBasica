@@ -3,54 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>MOKEPON 🔥💧🌼</h1>
-
+    
     <section id="seleccionar-mascota">
 
-        <h2>Elige a tu mascota</h2>
+        <h1 id="titulo" id="titulo">¡MOKEPON! 🔥💧🌼</h1>
 
-        <!-- for para vincular label con id de la mascota y no solo en el radio de seleccion -->
-        <input type="radio" id="buckbeack" name="mascota"> 
-            <label for="buckbeack" id="buckbeack">Buckbeack -> Agua</label><br>
+        <h2 id="subtitulo">Elige a tu mascota</h2>
 
-        <input type="radio" id="ptolomeo" name="mascota"> 
-            <label for="ptolomeo">Ptolomeo -> Fuego</label><br>
+        <div id="tarjetas">
+                
+            <!-- for para vincular label con id de la mascota y no solo en el radio de seleccion -->
+                    <label for="buckbeack" id="tarjetaMokeponBuckbeack">
+                        <p id="buckbeack-checked">Buckbeack</p>
+                        <img src="ratigueya.png" alt="" id="imgBuckbeack">
+                    </label><br>
 
-        <input type="radio" id="redmington" name="mascota"> 
-            <label for="redmington">Redmington -> Tierra</label><br>
-        <!-- <input type="radio" id="seevitar" name="mascota"> <label for="">Seevitar -> Fuego y Tierra</label><br>
-        <input type="radio" id="raaymond" name="mascota"> <label for="">Raaymond -> Agua y Fuego</label><br>
-        <input type="radio" id="tyronee" name="mascota"> <label for="">Tyronee -> Tierra y Agua</label><br> -->
+                <input type="radio" name="mascota" id="buckbeack">
+
+                    <label for="ptolomeo" id="tarjetaMokeponPtolomeo">
+                        <p id="ptolomeo-checked">Ptolomeo</p>
+                        <img src="capipepo.png" alt="" id="imgPtolomeo">
+                    </label><br>
+                    <input type="radio" name="mascota" id="ptolomeo">
+                
+                    <label for="redmington" id="tarjetaMokeponRedmington">
+                        <p id="redmington-checked">Redmington</p>
+                        <img src="hipodoge.png" alt="" id="imgRedmington">
+                    </label><br>
+                    <input type="radio" name="mascota" id="redmington">
+
+        </div>
 
         <button id="boton-mascota">Seleccionar</button>
 
     </section>
 
+    
+    <!-- INICIO DE SEGUNDA PANTALLA -->
+
     <section id="seleccionar-ataque">
 
-        <h2>Elige tu ataque</h2>
+        <h1 class="titulo-ataque">¡MOKEPON!</h1>
 
-        <p>Tu mascota <span id="mascota-jugador"></span> tiene<span id=""> 3 </span>vidas</p>
-        <p>La mascota <span id="mascota-enemigo"></span> enemigo tiene</span id=""> 3 </span>vidas</p>
+        <h2 class="subtitulo-ataque">Elige a tu ataque</h2>
 
-        <p>
-            <button id="boton-fuego">Fuego 🔥</button>
-            <button id="boton-agua">Agua 💧</button>
-            <button id="boton-tierra">Tierra 🌼</button>
+        <div class="contenedor-boton">
+            <button id="boton-fuego" class="boton-de-ataque">Fuego 🔥</button>
+            <button id="boton-agua" class="boton-de-ataque">Agua 💧</button>
+            <button id="boton-tierra" class="boton-de-ataque">Tierra 🌼</button>
+        </div>
 
-        </p>
-    </section>
+        <!-- BOTON DE REINICIO (Ultima pantalla) -->
+        <div class="contenedor-mensajes-ataque">
 
-    <section id="mensajes">
+            <section id="reiniciar">
+                <button id="boton-reiniciar">REINICIAR</button>
+            </section>
+
+            <section id="mensajes"></section>
+
+            <div id="resultado"></div>
+ 
+            <!-- FINALIZA BOTON REINICIO  -->
+        </div>
+
         
+        <div class="contenedor-jugadores">
+            <p id="contenedor-player-1">Tu mascota <span id="mascota-jugador"></span> tiene <span id="vidasJugador">♥️ ♥️ ♥️</span> vidas</p>
+            <p id="pierde-jugador"></p>
+
+            <p id="contenedor-player-2">La mascota del enemigo <span id="mascota-enemigo"></span> tiene <span id="vidasEnemigo">♥️ ♥️ ♥️</span> vidas</p>
+            <p id="pierde-enemigo"></p>
+        </div>
+
+        <!-- FINALIZA SEGUNDA PANTALLA -->
+        
+
     </section>
 
-    <section id="reiniciar">
-        <button id="boton-reiniciar">REINICIAR</button>
-    </section>
+    
+
+    
 
 
     <script src="js/script.js"></script>
