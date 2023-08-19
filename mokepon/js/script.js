@@ -18,40 +18,6 @@ const ptolomeoChecked = document.getElementById("ptolomeo-checked");
 const tarjetaMokeponPtolomeo = document.getElementById("tarjetaMokeponPtolomeo");
 const redmingtonChecked = document.getElementById("redmington-checked");
 const tarjetaMokeponRedmington = document.getElementById("tarjetaMokeponRedmington");
-    
-
-function checked(colorB, fontWeightB, backgroundB, colorP, fontWeightP, backgroundP, colorR, fontWeightR, backgroundR) {
-
-    buckbeackChecked.style.color = colorB;
-    buckbeackChecked.style.fontWeight = fontWeightB;
-    tarjetaMokeponBuckbeack.style.backgroundColor = backgroundB;
-
-    ptolomeoChecked.style.color = colorP;
-    ptolomeoChecked.style.fontWeight = fontWeightP;
-    tarjetaMokeponPtolomeo.style.backgroundColor = backgroundP;
-
-    redmingtonChecked.style.color = colorR;
-    redmingtonChecked.style.fontWeight = fontWeightR;
-    tarjetaMokeponRedmington.style.backgroundColor = backgroundR;
-
-}
-
-// tarjeta de Buckbeack
-buckbeackChecked.addEventListener("click", (a) => {
-    checked("green", "bolder", "#111", "#000", "none", "#777", "#000", "none", "#777");
-})
-
-// tarjeta de Ptolomeo
-ptolomeoChecked.addEventListener("click", (b) => {
-    checked("#000", "none", "#777", "green", "bolder", "#111", "#000", "none", "#777");
-    
-})
-
-// tarjeta de Redmington
-redmingtonChecked.addEventListener("click", (c) => {
-    checked("#000", "none", "#777", "#000", "none", "#777", "green", "bolder", "#111");
-
-})
 
 
 function iniciarJuego(){
@@ -118,6 +84,39 @@ function seleccionarMascotaEnemigo(){
         mascotaEnemigo.innerHTML = "Redmington";
     }
 }
+
+function checked(colorB, fontWeightB, backgroundB, colorP, fontWeightP, backgroundP, colorR, fontWeightR, backgroundR) {
+
+    buckbeackChecked.style.color = colorB;
+    buckbeackChecked.style.fontWeight = fontWeightB;
+    tarjetaMokeponBuckbeack.style.backgroundColor = backgroundB;
+
+    ptolomeoChecked.style.color = colorP;
+    ptolomeoChecked.style.fontWeight = fontWeightP;
+    tarjetaMokeponPtolomeo.style.backgroundColor = backgroundP;
+
+    redmingtonChecked.style.color = colorR;
+    redmingtonChecked.style.fontWeight = fontWeightR;
+    tarjetaMokeponRedmington.style.backgroundColor = backgroundR;
+
+}
+
+// tarjeta de Buckbeack
+buckbeackChecked.addEventListener("click", (a) => {
+    checked("green", "bolder", "#111", "#000", "none", "#777", "#000", "none", "#777");
+})
+
+// tarjeta de Ptolomeo
+ptolomeoChecked.addEventListener("click", (b) => {
+    checked("#000", "none", "#777", "green", "bolder", "#111", "#000", "none", "#777");
+    
+})
+
+// tarjeta de Redmington
+redmingtonChecked.addEventListener("click", (c) => {
+    checked("#000", "none", "#777", "#000", "none", "#777", "green", "bolder", "#111");
+
+})
 
 function ataqueFuego() {
     ataqueJugador = 'FUEGO';
