@@ -12,65 +12,46 @@ pierdeJugador.hidden = true
 const mascotaElegidaAleatorio = aleatorio(1, 3);
 const mascotaEnemigo = document.getElementById("mascota-enemigo");    
 let botonReiniciar = document.getElementById("boton-reiniciar");
+const buckbeackChecked = document.getElementById("buckbeack-checked");
+const tarjetaMokeponBuckbeack = document.getElementById("tarjetaMokeponBuckbeack");
+const ptolomeoChecked = document.getElementById("ptolomeo-checked");
+const tarjetaMokeponPtolomeo = document.getElementById("tarjetaMokeponPtolomeo");
+const redmingtonChecked = document.getElementById("redmington-checked");
+const tarjetaMokeponRedmington = document.getElementById("tarjetaMokeponRedmington");
     
 
+function checked(colorB, fontWeightB, backgroundB, colorP, fontWeightP, backgroundP, colorR, fontWeightR, backgroundR) {
+
+    buckbeackChecked.style.color = colorB;
+    buckbeackChecked.style.fontWeight = fontWeightB;
+    tarjetaMokeponBuckbeack.style.backgroundColor = backgroundB;
+
+    ptolomeoChecked.style.color = colorP;
+    ptolomeoChecked.style.fontWeight = fontWeightP;
+    tarjetaMokeponPtolomeo.style.backgroundColor = backgroundP;
+
+    redmingtonChecked.style.color = colorR;
+    redmingtonChecked.style.fontWeight = fontWeightR;
+    tarjetaMokeponRedmington.style.backgroundColor = backgroundR;
+
+}
+
 // tarjeta de Buckbeack
-const buckbeackChecked = document.getElementById("buckbeack-checked");
-const tarjetaMokeponBuckbeack = document.getElementById("tarjetaMokeponBuckbeack");     
 buckbeackChecked.addEventListener("click", (a) => {
-
-    buckbeackChecked.style.color = "green";
-    buckbeackChecked.style.fontWeight = "bolder";
-    tarjetaMokeponBuckbeack.style.backgroundColor = "#111";
-
-    ptolomeoChecked.style.color = "#000";
-    ptolomeoChecked.style.fontWeight = "none";
-    tarjetaMokeponPtolomeo.style.backgroundColor = "#777"
-
-    redmingtonChecked.style.color = "#000";
-    redmingtonChecked.style.fontWeight = "none";
-    tarjetaMokeponRedmington.style.backgroundColor = "#777";
-
+    checked("green", "bolder", "#111", "#000", "none", "#777", "#000", "none", "#777");
 })
 
 // tarjeta de Ptolomeo
-const ptolomeoChecked = document.getElementById("ptolomeo-checked");
-const tarjetaMokeponPtolomeo = document.getElementById("tarjetaMokeponPtolomeo");
 ptolomeoChecked.addEventListener("click", (b) => {
-
-    ptolomeoChecked.style.color = "green";
-    ptolomeoChecked.style.fontWeight = "bolder";
-    tarjetaMokeponPtolomeo.style.backgroundColor = "#111"
-
-    buckbeackChecked.style.color = "#000";
-    buckbeackChecked.style.fontWeight = "none";
-    tarjetaMokeponBuckbeack.style.backgroundColor = "#777"
-
-    redmingtonChecked.style.color = "#000";
-    redmingtonChecked.style.fontWeight = "none";
-    tarjetaMokeponRedmington.style.backgroundColor = "#777"
+    checked("#000", "none", "#777", "green", "bolder", "#111", "#000", "none", "#777");
     
 })
 
 // tarjeta de Redmington
-const redmingtonChecked = document.getElementById("redmington-checked");
-const tarjetaMokeponRedmington = document.getElementById("tarjetaMokeponRedmington");
 redmingtonChecked.addEventListener("click", (c) => {
-
-    redmingtonChecked.style.color = "green";
-    redmingtonChecked.style.fontWeight = "bolder";
-    tarjetaMokeponRedmington.style.backgroundColor = "#111"
-
-    ptolomeoChecked.style.color = "#000";
-    ptolomeoChecked.style.fontWeight = "none";
-    tarjetaMokeponPtolomeo.style.backgroundColor = "#777"
-
-    buckbeackChecked.style.color = "#000";
-    buckbeackChecked.style.fontWeight = "none";
-    tarjetaMokeponBuckbeack.style.backgroundColor = "#777"
+    checked("#000", "none", "#777", "#000", "none", "#777", "green", "bolder", "#111");
 
 })
-
 
 
 function iniciarJuego(){
