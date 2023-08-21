@@ -9,38 +9,46 @@ let pierdeEnemigo = document.getElementById("pierde-enemigo");
 pierdeEnemigo.hidden = true
 let pierdeJugador = document.getElementById("pierde-jugador");
 pierdeJugador.hidden = true
-const mascotaElegidaAleatorio = aleatorio(1, 3);
-const mascotaEnemigo = document.getElementById("mascota-enemigo");    
+let mascotaElegidaAleatorio = aleatorio(1, 3);
+let mascotaEnemigo = document.getElementById("mascota-enemigo");    
 let botonReiniciar = document.getElementById("boton-reiniciar");
-const buckbeackChecked = document.getElementById("buckbeack-checked");
-const tarjetaMokeponBuckbeack = document.getElementById("tarjetaMokeponBuckbeack");
-const ptolomeoChecked = document.getElementById("ptolomeo-checked");
-const tarjetaMokeponPtolomeo = document.getElementById("tarjetaMokeponPtolomeo");
-const redmingtonChecked = document.getElementById("redmington-checked");
-const tarjetaMokeponRedmington = document.getElementById("tarjetaMokeponRedmington");
+let buckbeackChecked = document.getElementById("buckbeack-checked");
+let tarjetaMokeponBuckbeack = document.getElementById("tarjetaMokeponBuckbeack");
+let ptolomeoChecked = document.getElementById("ptolomeo-checked");
+let tarjetaMokeponPtolomeo = document.getElementById("tarjetaMokeponPtolomeo");
+let redmingtonChecked = document.getElementById("redmington-checked");
+let tarjetaMokeponRedmington = document.getElementById("tarjetaMokeponRedmington");
+let seleccionarAtaque = document.getElementById("seleccionar-ataque");
+let botonMascotaJugador = document.getElementById("boton-mascota");
+let botonFuego = document.getElementById("boton-fuego"); 
+let botonAgua = document.getElementById("boton-agua");
+let botonTierra = document.getElementById("boton-tierra");
+let seleccionarMascota = document.getElementById("seleccionar-mascota");
+let buckbeack = document.getElementById("buckbeack");
+let ptolomeo = document.getElementById("ptolomeo");
+let redmington = document.getElementById("redmington");
+let mascotaJugador = document.getElementById("mascota-jugador");
+let spanVidaJugador = document.getElementById("vidasJugador");
+let vidas = document.getElementById("vidasEnemigo");
+
+
 
 
 function iniciarJuego(){
 
-    let seleccionarAtaque = document.getElementById("seleccionar-ataque");
     seleccionarAtaque.style.display = "none"
 
-    const botonMascotaJugador = document.getElementById("boton-mascota");
     botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador);
 
-    let botonFuego = document.getElementById("boton-fuego"); 
     botonFuego.addEventListener("click", ataqueFuego);
     botonFuego.addEventListener("click", ataqueEnemigo);
 
-    let botonAgua = document.getElementById("boton-agua");
     botonAgua.addEventListener("click", ataqueAgua);
     botonAgua.addEventListener("click", ataqueEnemigo);
 
-    let botonTierra = document.getElementById("boton-tierra");
     botonTierra.addEventListener("click", ataqueTierra);
     botonTierra.addEventListener("click", ataqueEnemigo);
 
-    
     botonReiniciar.addEventListener("click", reiniciarJuego);
     botonReiniciar.hidden = true;
 
@@ -48,19 +56,9 @@ function iniciarJuego(){
 
 function seleccionarMascotaJugador(){
 
-
-    let seleccionarMascota = document.getElementById("seleccionar-mascota");
     seleccionarMascota.style.display = "none";
-    let seleccionarAtaque = document.getElementById("seleccionar-ataque");
     // display block para mostrar resultados de seleccion donde al inicio estaban 'hidden'
     seleccionarAtaque.style.display = "flex"
-    const buckbeack = document.getElementById("buckbeack");
-    const ptolomeo = document.getElementById("ptolomeo");
-    const redmington = document.getElementById("redmington");
-    const mascotaJugador = document.getElementById("mascota-jugador");
-    const buckbeackChecked = document.getElementById("buckbeack-checked");
-    const ptolomeoChecked = document.getElementById("ptolomeo-checked");
-    const redmingtonChecked = document.getElementById("redmington-checked");
     
     if(buckbeack.checked) {
         mascotaJugador.innerHTML = "Buckbeack";
@@ -145,11 +143,8 @@ function ataqueEnemigo(){
 } 
 
 function finAtaques(){
-    let botonFuego = document.getElementById("boton-fuego"); 
     botonFuego.disabled = true
-    let botonAgua = document.getElementById("boton-agua");
     botonAgua.disabled = true
-    let botonTierra = document.getElementById("boton-tierra");
     botonTierra.disabled = true
 }
 
@@ -159,17 +154,14 @@ function combate(){
     mensajeCombate.classList.add("mensaje-ataque");
     mensajes.appendChild(mensajeCombate);
 
-    const spanVidaJugador = document.getElementById("vidasJugador");
-    const vidas = document.getElementById("vidasEnemigo");
-
     if(ataqueJugador == ataqueEnemigo){
         mensajeCombate.innerHTML = 'EMPATE ';
+
     }else if(ataqueJugador == 'FUEGO' && ataqueEnemigo == 'TIERRA' ||
             ataqueJugador == 'AGUA' && ataqueEnemigo == 'FUEGO' || 
             ataqueJugador == 'TIERRA' && ataqueEnemigo == 'AGUA'){
         mensajeCombate.innerHTML = 'GANASTE ';
         vidasEnemigo--
-        // spanVidaEnemigo.innerHTML = vidasEnemigo;
         vidas.innerHTML = vidasEnemigo
             if(vidasEnemigo == 2){
                 vidaCorazonEnemigo = "♥️ ♥️";
@@ -210,11 +202,9 @@ function revisarVidas(){
     let botonReiniciar = document.getElementById("reiniciar");
 
     if(vidasEnemigo == 0){
-        // alert("GANASTE PERRI\nGANASTE CON " + vidaCorazonJugador + " vidas")
         botonReiniciar.hidden = false
         finAtaques()
     }else if(vidasJugador == 0){
-        // alert("PERDISTE NABO\nTE GANARON CON "+ vidaCorazonEnemigo + " vidas");
         botonReiniciar.hidden = false
         finAtaques()
     }
