@@ -144,6 +144,15 @@ function ataqueEnemigo(){
     crearMnsj();
 } 
 
+function finAtaques(){
+    let botonFuego = document.getElementById("boton-fuego"); 
+    botonFuego.disabled = true
+    let botonAgua = document.getElementById("boton-agua");
+    botonAgua.disabled = true
+    let botonTierra = document.getElementById("boton-tierra");
+    botonTierra.disabled = true
+}
+
 function combate(){
 
     let mensajeCombate = document.createElement('p');
@@ -169,11 +178,9 @@ function combate(){
                 vidaCorazonEnemigo = "♥️";
                 vidas.innerHTML = vidaCorazonEnemigo;
             }else{
-                let contenedorP2 = document.getElementById("contenedor-player-2");
                 pierdeEnemigo.innerHTML = "El jugador enemigo no tiene mas vidas";
                 pierdeEnemigo.classList.add("pierde-enemigo");
                 pierdeEnemigo.hidden = false;
-                contenedorP2.hidden = true
                 botonReiniciar.hidden = false
             }
         revisarVidas()
@@ -187,26 +194,15 @@ function combate(){
         }else if(vidasJugador == 1){
             vidaCorazonJugador = "♥️";
             spanVidaJugador.innerHTML = vidaCorazonJugador
-        }else{
-            let contenedorP1 = document.getElementById("contenedor-player-1");
+        }else if(vidasJugador == 0){
             pierdeJugador.innerHTML = "No tenes más vidas perrito. Reinicia el juego ya";
             pierdeJugador.classList.add("pierde-jugador");
             pierdeJugador.hidden = false;
-            contenedorP1.hidden = true
-            spanVidaJugador.innerHTML = "El jugador no tiene mas vidas"
-            botonReiniciar.hidden = false
+            spanVidaJugador.innerHTML = "0"
+            botonReiniciar.hidden = false;
         }
-        revisarVidas()
     }
-}
-
-function finAtaques(){
-    let botonFuego = document.getElementById("boton-fuego"); 
-    botonFuego.disabled = true
-    let botonAgua = document.getElementById("boton-agua");
-    botonAgua.disabled = true
-    let botonTierra = document.getElementById("boton-tierra");
-    botonTierra.disabled = true
+        revisarVidas()
 }
 
 function revisarVidas(){

@@ -94,13 +94,13 @@ body{
 #titulo {
     color: #fff;
     font-size: 40px;
-    padding: 15px 0 15px 70px;
+    padding: 15px 0 15px 15px;
     box-sizing: border-box;
     background-color: #000;
     border-radius: 30px;
     border: 3px solid #fff;
     height: 100px;
-    width: 500px;
+    /* width: 500px; */
     margin-top: 100px;
 }
 
@@ -115,7 +115,7 @@ body{
 }
 
 #tarjetas {
-
+    display: grid;
 }
 
 #seleccionar-mascota {
@@ -166,15 +166,16 @@ input {
     color: #fff;
     border: 1px solid #fff;
     border-radius: 10px;
-    transition: .5s all;
+    transition: 1.5s all;
     font-size: 20px;
+    font-weight: 700;
 }
 #boton-mascota:hover{
     background-color: #999;
     color: #000;
     border: 1px solid #838383;
     border-radius: 10px;
-    transition: .5s all;
+    transition: 1s all;
     cursor: pointer;
     font-weight: bolder;
 }
@@ -234,8 +235,18 @@ input {
 }
 
 .contenedor-jugadores{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 100px 100px;
+    justify-items: center;
+    justify-content: space-around;
+    background-color: #000;
+    border: 5px groove #222;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #fff;
+    width: 400px;
+    margin: 27px 0 0 0;
 }
 
 #contenedor-player-1{
@@ -290,13 +301,6 @@ input {
     padding: 10px
 }
 
-.mascota-jugador{
-    color: ;
-}
-
-.mascota-enemigo{
-
-}
 
 #vidasJugador{
     font-size: 20px;
@@ -311,34 +315,39 @@ input {
     display: flex;
 }
 
+#mensajes {
+    display: grid;
+    justify-items: center;
+}
+
 .parrafo-mensaje-ataque{
+    display: grid;
+    justify-items: center;
     box-sizing: border-box;
-    background-color: hwb(28 1% 2%);
+    background-color: rgba(26, 25, 25, 0.671);
     color: hsl(0, 0%, 100%);
-    border: 2px solid #fff;
-    border-radius: 10px;
+    border: 3px solid #fff;
+    border-radius: 42px;
     transition: .5s all;
     margin: 20px 0px 0 0;
     font-size: 20px;
     font-weight: bolder;
-    padding: 10px;
-    width: 950px;
+    padding: 2px;
+    width: 501px;
 }
 
 .mensaje-ataque{
-    display: flex;
+    border-radius: 10px;
+    display: grid;
     box-sizing: border-box;
     background-color: hsl(0, 0%, 100%);
     color: #000;
-    border: 2px solid #fff;
-    border-radius: 20px;
+    border: 3px solid #0043ff7a;
     transition: .5s all;
-    margin: 10px 0px 0px 15px;
+    margin: 6px 0px 16px 0px;
     font-size: 30px;
     font-weight: bolder;
-    padding: 10px;
-    width: 550px;
-    margin-left: 200px;
+    width: 169px;
     justify-content: center;
 
 }
@@ -351,4 +360,178 @@ input {
     color: #fff;
     font-weight: bolder;
     border-radius: 10px;
+}
+
+@media (max-width: 360px) {
+
+    #tarjetas {
+        flex-direction: column;
+        justify-items: center;
+    }
+
+    #subtitulo{
+        justify-content: center;
+        padding: 0;
+        margin: 18px 10px 11px 10px;
+        display: grid;
+    }
+
+    #seleccionar-mascota {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    #titulo {
+        color: #fff;
+        padding-left: 10%;
+        font-size: 29px;
+        box-sizing: border-box;
+        background-color: #000;
+        border-radius: 30px;
+        border: 3px solid #fff;
+        height: 82px;
+        margin: 8px 10px 0 10px;
+    }
+
+    #boton-mascota{
+        width: 185px;
+        height: 50px;
+        background-color: #000;
+        color: #fff;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        transition: .5s all;
+        font-size: 20px;
+        margin-left: 80px;
+    }
+
+    #titulo-ataque{
+        display: flex;
+        padding-top: 20px;
+        justify-content: center;
+        box-sizing: border-box;
+        background-color: #000;
+        border-radius: 30px;
+        border: 3px solid #fff;
+        height: 100px;
+        width: 300px;
+        margin-top: 20px;
+        color: #fff;
+        font-weight: bolder;
+        font-size: 45px;
+    }
+
+    .subtitulo-ataque{
+        padding: 10px;
+        border: 2px solid #fff;
+        background-color: #000;
+        color: #fff;
+        font-size: 25px;
+        margin: 10px 15px 5px 20px;
+        border-radius: 10px;
+    }
+
+    .boton-de-ataque{
+        background-color: #000;
+        border-radius: 35px;
+        height: 72px;
+        width: 185px;
+        border: 1px solid #fff;
+        color: #fff;
+        font-size: 25px;
+        transition: 1s all;
+    }
+
+    .contenedor-boton {
+        position: sticky;
+        display: grid;
+    }
+
+    #boton-fuego{
+        margin-top: 10px;
+        font-size: 30px;
+        color: tomato;
+        background: #999;
+        font-family: fantasy;
+        text-decoration: overline;
+    }
+
+    #boton-agua{
+        margin-top: 10px;
+        font-size: 30px;
+        color: #1930f7;
+        background: #999;
+        font-family: fantasy;
+        text-decoration: overline;
+    }
+
+    #boton-tierra{
+        margin-top: 10px;
+        font-size: 30px;
+        color: #a35210;
+        background: #999;
+        font-family: fantasy;
+        text-decoration: overline;
+    }
+
+    .parrafo-mensaje-ataque{
+        display: grid;
+        justify-items: center;
+        box-sizing: border-box;
+        background-color: rgba(26, 25, 25, 0.671);
+        color: hsl(0, 0%, 100%);
+        border: 3px solid #fff;
+        border-radius: 42px;
+        transition: .5s all;
+        margin: 14px 0px 0 0;
+        font-size: 16px;
+        font-weight: bolder;
+        padding: 14px;
+    }
+
+    .contenedor-jugadores{
+        display: grid;
+        grid-template-columns: 100px 100px;
+        justify-items: center;
+        justify-content: space-around;
+        background-color: #000;
+        border: 5px groove #222;
+        border-radius: 30px;
+        font-size: 20px;
+        font-weight: bolder;
+        color: #fff;
+        width: 303px;
+        margin: 27px 0 0 0;
+    }
+
+    .parrafo-mensaje-ataque {
+        display: grid;
+        width: 280px;
+        box-sizing: border-box;
+        background-color: rgba(26, 25, 25, 0.671);
+        color: hsl(0, 0%, 100%);
+        border: 3px solid #fff;
+        border-radius: 42px;
+        transition: .5s all;
+        margin: 14px 0px 0 0;
+        font-size: 16px;
+        font-weight: bolder;
+    }
+
+    .mensaje-ataque {
+        border-radius: 10px;
+        display: grid;
+        box-sizing: border-box;
+        background-color: hsl(0, 0%, 100%);
+        color: #000;
+        border: 3px solid #0043ff7a;
+        transition: .5s all;
+        margin: 6px 0px 16px 0px;
+        font-size: 30px;
+        font-weight: bolder;
+        width: 169px;
+        justify-content: center;
+    }
+
+
 }
