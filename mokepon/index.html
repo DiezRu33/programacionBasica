@@ -1,83 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
-</head>
-<body>
-    
-    <!-- INICIO DE PRIMER PANTALLA -->
-    <section id="seleccionar-mascota">
-        <h1 id="titulo">¡MOKEPON! 🔥💧🌼</h1>
-        <h2 id="subtitulo">Elige a tu mascota</h2>
-        <div id="tarjetas">
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>MOKEPON!</title>
+        <link rel="stylesheet" href="./styles.css"> 
+    </head>
+    <body>
+        <section id="seleccionar-mascota">
+            <h1 class="titulo">Mokepono</h1> 
+
+            <h2 class="subtitulo">Elige tu mascota:</h2>
+
+            <div id='contenedorTarjetas' class="tarjetas">
                 
-            <!-- for para vincular label con id de la mascota y no solo en el radio de seleccion -->
-                    <label for="buckbeack" id="tarjetaMokeponBuckbeack">
-                        <p id="buckbeack-checked">Buckbeack</p>
-                        <img src="ratigueya.png" alt="" id="imgBuckbeack">
-                        <input type="radio" name="mascota" id="buckbeack">
-                    </label><br>
-
-                    <label for="ptolomeo" id="tarjetaMokeponPtolomeo">
-                        <p id="ptolomeo-checked">Ptolomeo</p>
-                        <img src="capipepo.png" alt="" id="imgPtolomeo">
-                        <input type="radio" name="mascota" id="ptolomeo">
-                    </label><br>
-                    
-                    <label for="redmington" id="tarjetaMokeponRedmington">
-                        <p id="redmington-checked">Redmington</p>
-                        <img src="hipodoge.png" alt="" id="imgRedmington">
-                        <input type="radio" name="mascota" id="redmington">
-                    </label><br>
-                    
-        </div>
-        <button id="boton-mascota">Seleccionar</button>
-    </section>
-
-    
-    <!-- INICIO DE SEGUNDA PANTALLA -->
-    <section id="seleccionar-ataque">
-        <h1 class="titulo-ataque">¡MOKEPON!</h1>
-        <h2 class="subtitulo-ataque">Elige a tu ataque</h2>
-
-        <div class="contenedor-boton">
-            <button id="boton-fuego" class="boton-de-ataque">Fuego 🔥</button>
-            <button id="boton-agua" class="boton-de-ataque">Agua 💧</button>
-            <button id="boton-tierra" class="boton-de-ataque">Tierra 🌼</button>
-        </div>
-
-        <div class="contenedor-jugadores">
-            <div>
-                <p id="vidasJugador">♥️ ♥️ ♥️</p>
-                <p id="mascota-jugador"></p> 
             </div>
 
-            <div>
-                <p id="vidasEnemigo">♥️ ♥️ ♥️</p>
-                <p id="mascota-enemigo"></p>
+            <button id="boton-mascota">Seleccionar</button>
+        </section>
+
+        <section id="seleccionar-ataque">
+            <h1 class="titulo">Mokepon</h1>
+
+            <h2 class="subtitulo">Elige tu ataque:</h2>
+
+            <div id='contenedorAtaques' class="tarjetas-ataques">
+
             </div>
-        </div>
 
+            <div id="mensajes">
+                <p id="resultado">Mucha suerte</p>
 
-        <p id="pierde-jugador"></p>
-        <p id="pierde-enemigo"></p>
+                <section id="reiniciar">
+                    <button id="boton-reiniciar">Reiniciar</button>
+                </section>
+            </div>
 
-        <!-- BOTON DE REINICIO (Ultima pantalla) -->
-        <div class="contenedor-mensajes-ataque">
-            <section id="reiniciar">
-                <button id="boton-reiniciar">REINICIAR</button>
-            </section>
-
-            <section id="mensajes"></section>
-            <div id="resultado"></div>
-            <!-- FINALIZA BOTON REINICIO  -->
-        </div>
-        <!-- FINALIZA SEGUNDA PANTALLA -->
-    </section>
-
-    <script src="js/script.js"></script>
-</body>
+            <div class="ataques">
+                <div class="ataques-jugador">
+                    <p id="vidas-jugador">0</p>
+                    <p id="mascota-jugador"></p>
+                    <div id="ataques-del-jugador"></div>
+                </div>
+                <div class="ataques-enemigo">
+                    <p id="vidas-enemigo">0</p>
+                    <p id="mascota-enemigo"></p>
+                    <div id="ataques-del-enemigo"></div>
+                </div>
+            </div>
+        </section>
+        <script src="js/script.js"></script>
+    </body>
 </html>
