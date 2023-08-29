@@ -1,0 +1,83 @@
+Tu sistema tiene las siguientes variables:a = 10, b = 20 y c = a - b.
+¿Cuánto vale c?
+
+-10
+2.
+Vas a crear una variable y asignarle un valor. ¿Dónde se almacena este contenido?
+Los archivos se guardan en el disco duro cuando escribimos el código. Las variables se guardan en memoria RAM cuando ejecutamos el código.
+3.
+¿Cómo llamamos a los textos en la industria de la programación?
+String
+4.
+Quieres crear un archivo llamado main para guardar tu código JavaScript. ¿Cuál debe ser su nombre completo (con extensión)?
+
+main.js
+5.
+¿Cuál es la principal etiqueta en HTML donde puedes guardar las demás etiquetas de tu sitio web?
+body
+REPASAR CLASE
+6.
+¿En qué orden carga el HTML de nuestro sitio web?
+De arriba hacia abajo.
+7.
+¿Cuál de las siguientes propiedades de CSS NO hace parte del modelo de caja?
+background
+8.
+¿Qué es :hover en CSS?
+
+Una pseudo-clase.
+9.
+¿Cómo detectamos en CSS que un usuario hace click en un input de tipo radio o checkbox?
+input:checked
+
+10.
+¿Qué es un objeto?
+Es un método que utilizamos con los arreglos para agregar uno o más elementos al final del array. Al final nos regresa su nueva longitud.
+REPASAR CLASE
+11.
+¿Qué significa el “this” al momento de construir nuestra clase?
+La palabra clave “this” se refiere al objeto actual en el que se está escribiendo el código.
+12.
+¿Para qué se utiliza el método .push?
+Es un método que se utiliza con los arreglos que nos permiten agregar uno o más elementos al final de arreglo y nos regresa la nueva longitud del mismo
+13.
+¿Qué es el método forEach? ¿Para qué sirve?
+Es un método que nos permite recorrer y realizar una función específica por cada uno de los elementos que se encuentren en un arreglo.
+14.
+¿Cúal es la etiqueta que nos permite dibujar en el navegador?
+<canvas>
+
+15.
+¿Para obtener el contexto del canvas usamos getContext()?
+Verdadero
+16.
+¿Al usar la función clearRect() del contexto de un canvas se borra todo el contenido del canvas?
+Verdadero
+17.
+¿Cómo logramos que una función se ejecute cada cierto tiempo?
+setInterval()
+18.
+¿Cuál es el evento que se ejecuta cuando empezamos a presionar una tecla?
+keydown
+19.
+¿Qué es el backend?
+Es todo el código que se ejecuta en el proveedor de servicios o servidor.
+20.
+¿Cuál es la arquitectura de red de la web?
+Cliente-Servidor
+21.
+¿Qué es Node.js?
+Es una librería de JavaScript para el frontend.
+REPASAR CLASE
+22.
+¿Qué es Express.js?
+Es una biblioteca que nos permite crear servidores web fácilmente en Node.js.
+23.
+¿Para qué sirve el dominio o la IP?
+Para identificar a una computadora en una red de internet.
+24.
+¿Para qué sirve el puerto después de la IP?
+Es como un canal que indica con qué programa nos estamos comunicando.
+25.
+¿Cuál es la finalidad del formato JSON?
+Permitirnos crear datos estructurados.
